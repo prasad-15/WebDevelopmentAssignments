@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="shortcut icon" href="../static/images/calculator.ico" type="image/x-icon">
+    <title>Calculator</title>
+    <script>
+        function doAdd() {
+            var number1 = document.getElementById("operand1").value;
+            var number2 = document.getElementById("operand2").value;
+
+            var result = Number(number1) + Number(number2);
+            document.getElementById("result").innerHTML = result;
+        }
+        function doSub() {
+            var number1 = document.getElementById("operand1").value;
+            var number2 = document.getElementById("operand2").value;
+
+            var result = Number(number1) - Number(number2);
+            document.getElementById("result").innerHTML = result;
+        }
+        function doProd() {
+            var number1 = document.getElementById("operand1").value;
+            var number2 = document.getElementById("operand2").value;
+
+            var result = Number(number1) * Number(number2);
+            document.getElementById("result").innerHTML = result;
+        }
+        function doDiv() {
+            var number1 = document.getElementById("operand1").value;
+            var number2 = document.getElementById("operand2").value;
+
+            var result = Number(number1) / Number(number2);
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="ourDiv">
+        <div class="divcontent"><span class="textFeild">Number 1: </span> &nbsp;&nbsp;<input type="text" id="operand1"
+                placeholder="Enter a numeric value" class="inputFeild"><br><br>
+            <span class="textFeild">Number 2: </span>&nbsp;&nbsp;<input type="text" id="operand2"
+                placeholder="Enter a numeric value" class="inputFeild"><br><br><br>
+            <div class="btnDiv">
+                <button onclick="doAdd()" class="buttons">Add</button>
+                <button onclick="doSub()" class="buttons">Subtract</button>
+                <button onclick="doProd()" class="buttons">Product</button>
+                <button onclick="doDiv()" class="buttons">Divide</button>
+            </div>
+        </div>
+        <center><span class="textFeild reshighlight">Result: </span><span class="textFeild reshighlight" id="result">You
+                will see your result here!</span></center>
+    </div>
+</body>
+
+</html>

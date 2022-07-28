@@ -1,0 +1,42 @@
+body{
+    
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ourDiv{
+    margin-top: 75px;
+    border-radius: 20%;
+    height: 500px;
+    width: 500px;
+    background-color: #000000;
+    
+    box-shadow: 0 0 50px #F0A500;
+}
+.divcontent{
+    margin: 150px 50px 50px 100px;
+}
+.inputFeild{
+    width: 200px;
+    height: 30px;
+    
+}
+.textFeild{
+    font-family: serif;
+    font-size: large;
+    color: ivory;
+    
+}
+.btnDiv{
+    margin-left: 33px;
+}
+.buttons{
+    margin-left: 10px;
+}
+.buttons:hover{
+    background-color: #F0A500;  
+}
+.reshighlight{
+    box-shadow: 0 0 50px #F0A500;
+}
