@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Assignment</title>
+</head>
+
+<body>
+    <div class="centerdiv">
+        <p id="usernames"></p>
+        Username : <input type="text" name="" id="username" onblur="checkUsernameNonCaseSensitive()" class="contents" autocomplete="off" required>
+        <p id="message"></p>
+        <p id="usernames1"></p>
+        Username : <input type="text" name="" id="username2" onblur="checkUsernameWithCaseSensitive()" class="contents" autocomplete="off" required>
+        <p id="message2"></p>
+    </div>
+<b><p id="sentence"></p></b>
+Start: <input type="number" name="" id="start"><br><br>
+End:  &nbsp;<input type="number" name="" id="end"><br><br>
+<button onclick="sliceText()">Slice</button>
+<b><p id="sliced"></p></b>
+</body>
+<script>
+    var usernames = "guru,prasad,arun,nattu,rajesh,swathy,harini";
+    document.getElementById("usernames").innerHTML = "Usernames: " + usernames;
+    document.getElementById("usernames1").innerHTML = "Usernames: " + usernames;
+    function checkUsernameNonCaseSensitive() {
+        var userName = document.getElementById("username").value;
+        var message = document.getElementById("message");
+        if (userName.length>0){
+            if (usernames.indexOf(userName) >= 0) {
+                message.style.color = "red";
+                message.innerHTML = "Username Already Taken.";
+            }
+            else {
+                message.style.color = "green";
+                message.innerHTML = "Username Availabe.";
+            }
+        }else{
+            message.innerHTML = "";
+        }
+
+    }
+    function checkUsernameWithCaseSensitive() {
+        var username = document.getElementById("username2").value;
+        var regex = new RegExp(username, "i");
+        var message = document.getElementById("message2");
+        if (username.length>0){
+            if (usernames.search(regex) >= 0) {
+                message.style.color = "red";
+                message.innerHTML = "Username Already Taken.";
+            }
+            else {
+                message.style.color = "green";
+                message.innerHTML = "Username Availabe.";
+            }
+        }else{
+            message.innerHTML = "";
+        }
+    }
+    var sentence = "When we long for life without difficulties, remind us that oaks grow strong in contrary winds and diamonds are made under pressure.";
+    var question = document.getElementById("sentence");
+    var result = document.getElementById("sliced");
+    question.innerHTML = sentence;
+    function sliceText(){
+        var start = document.getElementById("start").value;
+        var end = document.getElementById("end").value;
+        start_index = (start.length>0)?start:0;
+        end_index = (end.length==0)?sentence.length:end;
+        var sliced = sentence.slice(start_index,end_index);
+        result.innerHTML = sliced;
+    }
+</script>
+
+</html>
