@@ -1,0 +1,44 @@
+body{
+    /* background-color: #28FFBF; */
+    /* background-color: #161226; */
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ourDiv{
+    margin-top: 75px;
+    border-radius: 20%;
+    height: 500px;
+    width: 500px;
+    background-color: #000000;
+    /* border: 1px solid ivory; */
+    /* box-shadow: 0 0 30px #C4FB6D; */
+    box-shadow: 0 0 50px #00AF91;
+}
+.divcontent{
+    margin: 150px 50px 50px 100px;
+}
+.inputFeild{
+    width: 200px;
+    height: 30px;
+    /* box-shadow: 0 0 50px #F0A500; */
+}
+.textFeild{
+    font-family: serif;
+    font-size: large;
+    color: ivory;
+    
+}
+.btnDiv{
+    margin-left: 33px;
+}
+.buttons{
+    margin-left: 10px;
+}
+.buttons:hover{
+    background-color: #00AF91;  
+}
+.resulthighlight{
+    box-shadow: 0 0 50px #00AF91;
+}

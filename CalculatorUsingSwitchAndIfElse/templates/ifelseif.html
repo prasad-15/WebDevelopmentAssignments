@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc-using-IfElse</title>
+    <link rel="stylesheet" href="../static/css/ifelsestyles.css">
+    <link rel="shortcut icon" href="../static/images/calculator.ico" type="image/x-icon">
+    <title>Calc-using-IfElseif</title>
+    <script>
+        function calculator(operator) {
+            var number1 = document.getElementById("operand1").value;
+            var number2 = document.getElementById("operand2").value;
+            var resultSpan = document.getElementById("result");
+            resultSpan.style.color = "green";
+            if (isNaN(number1) || isNaN(number2)) {
+                resultSpan.style.color = "red";
+                resultSpan.innerHTML = "Please enter valid inputs.";
+            }
+            else {
+                if (operator == "+") {
+                    resultSpan.innerHTML = Number(number1) + Number(number2);
+                }
+                else if (operator == "-") {
+                    resultSpan.innerHTML = number1 - number2;
+                }
+                else if (operator == "*") {
+                    resultSpan.innerHTML = number1 * number2;
+                }
+                else if (operator == "/") {
+                    resultSpan.innerHTML = number1 / number2;
+                }
+                else {
+                    resultSpan.style.color = "red";
+                    resultSpan.innerHTML = "Something went wrong.";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="ourDiv">
+        <div class="divcontent"><span class="textFeild">Number 1: </span> &nbsp;&nbsp;<input type="text" id="operand1"
+                placeholder="Enter a numeric value" class="inputFeild"><br><br>
+            <span class="textFeild">Number 2: </span>&nbsp;&nbsp;<input type="text" id="operand2"
+                placeholder="Enter a numeric value" class="inputFeild"><br><br><br>
+            <div class="btnDiv">
+                <button onclick="calculator('+')" class="buttons">Add</button>
+                <button onclick="calculator('-')" class="buttons">Subtract</button>
+                <button onclick="calculator('*')" class="buttons">Product</button>
+                <button onclick="calculator('/')" class="buttons">Divide</button>
+            </div>
+        </div>
+        <center><span class="textFeild resulthighlight">Result: </span><span class="textFeild resulthighlight" id="result">You
+                will see your result here!</span></center>
+    </div>
+</body>
+
+</html>
